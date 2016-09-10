@@ -1,12 +1,6 @@
 function destroyer(arr) {
-  // Remove all the values
-  var args = [].slice.call(arguments);
-  args.shift();
-  
-  return arr.filter(function(e) {
-    return (args.indexOf(e) < 0);
-  });
+  var args = [].slice.call(arguments).splice(1);
+  return arr.filter(e => args.indexOf(e) === -1);
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
-
